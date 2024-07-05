@@ -1,0 +1,26 @@
+---
+test/integration:
+  - changed-files:
+    - any-glob-to-any-file: "tests/*"
+    - any-glob-to-any-file: "tests/*/**"
+
+kind/rust:
+  - changed-files:
+    - any-glob-to-any-file: "**/*.rs"
+
+kind/yaml:
+  - changed-files:
+    - any-glob-to-any-file: "**/*.yaml"
+    - any-glob-to-any-file: "**/*.yml"
+
+kind/docs:
+  - changed-files:
+    - any-glob-to-any-file: "docs/*"
+    - any-glob-to-any-file: "docs/*/**"
+
+github/action:
+  - changed-files:
+    - any-glob-to-any-file: ".github/**/*.yml"
+
+next:
+    - base-branch: 'main'

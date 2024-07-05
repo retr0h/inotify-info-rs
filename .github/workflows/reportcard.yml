@@ -1,0 +1,15 @@
+---
+name: Rust Report Card
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  action_goreportcard:
+    runs-on: ubuntu-latest
+    name: A job to run rust report card
+    steps:
+      # https://github.com/xuri/rust-reportcard/discussions/3
+      # - name: Go Report Card
+      #   uses: creekorful/goreportcard-action@v1.0
