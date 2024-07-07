@@ -5,14 +5,16 @@ use std::path::Path;
 
 use colored::Colorize;
 
-pub fn print_separator() {
+mod cli;
+
+fn print_separator() {
     println!(
         "{}",
         iter::repeat('-').take(78).collect::<String>().yellow(),
     );
 }
 
-pub fn get_inotify_procfs_value(fname: &str) -> io::Result<String> {
+fn get_inotify_procfs_value(fname: &str) -> io::Result<String> {
     let filename = format!("/proc/sys/fs/inotify/{}", fname);
     let path = Path::new(&filename);
 
@@ -23,7 +25,7 @@ pub fn get_inotify_procfs_value(fname: &str) -> io::Result<String> {
     Ok(buf.trim().to_string())
 }
 
-pub fn print_inotify_limits() {
+fn print_inotify_limits() {
     let filenames = vec![
         "invalid",
         "max_queued_events",
@@ -38,4 +40,20 @@ pub fn print_inotify_limits() {
             Err(e) => println!("  {:<20} {:<10} - {}", fname, "N/A".red(), e),
         }
     }
+}
+
+pub fn main() {
+    let args = cli::get_args();
+
+    if let Some(pid) = args.pid {
+        println!("PID: {}", pid);
+    } else if let Some(app_name) = args.app_name {
+        println!("App Name: {}", app_name);
+    } else {
+        println!("No arguments provided.");
+    }
+
+    print_separator();
+    print_inotify_limits();
+    print_separator();
 }
