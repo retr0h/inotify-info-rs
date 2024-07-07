@@ -19,5 +19,7 @@ fn main() {
         println!("No arguments provided.");
     }
 
+    platform::print_separator();
     platform::print_inotify_limits();
+    platform::print_separator();
 }
