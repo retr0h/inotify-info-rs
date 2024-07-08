@@ -1,6 +1,7 @@
+[![crates.io](https://img.shields.io/crates/v/inotify-info-rs?style=for-the-badge)](https://crates.io/crates/inotify-info-rs)
 [![release](https://img.shields.io/github/release/retr0h/inotify-info-rs.svg?style=for-the-badge)](https://github.com/retr0h/inotify-info-rs/releases/latest)
 [![codecov](https://img.shields.io/codecov/c/github/retr0h/inotify-info-rs?token=HPZ323ZKBG&style=for-the-badge)](https://codecov.io/gh/retr0h/inotify-info-rs)
-[![Rust Report Card](https://rust-reportcard.xuri.me/badge/github.com/retr0h/inotify-info-rs?style=for-the-badge)](https://rust-reportcard.xuri.me/report/github.com/retr0h/inotify-info-rs)
+[![rust report card](https://rust-reportcard.xuri.me/badge/github.com/retr0h/inotify-info-rs?style=for-the-badge)](https://rust-reportcard.xuri.me/report/github.com/retr0h/inotify-info-rs)
 [![license](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=for-the-badge)](LICENSE)
 [![build](https://img.shields.io/github/actions/workflow/status/retr0h/inotify-info-rs/rust.yml?style=for-the-badge)](https://github.com/retr0h/inotify-info-rs/actions/workflows/rust.yml)
 [![conventional commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg?style=for-the-badge)](https://conventionalcommits.org)
