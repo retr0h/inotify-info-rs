@@ -1,0 +1,55 @@
+[tasks.fmt]
+description = "This utility formats all bin and lib files of the current crate using rustfmt"
+category = "project"
+command = "cargo"
+args = ["fmt"]
+
+[tasks.fmt-check]
+description = "Run rustfmt in check mode"
+category = "project"
+command = "cargo"
+args = ["fmt", "--check"]
+
+[tasks.clean]
+description = "Runs the cargo clean command"
+category = "project"
+command = "cargo"
+args = ["clean"]
+
+[tasks.build]
+description = "Compile the current package"
+category = "project"
+command = "cargo"
+args = ["build", "--verbose"]
+dependencies = ["clean"]
+
+[tasks.unit]
+description = "Run the tests"
+category = "project"
+command = "cargo"
+args = ["test"]
+
+[tasks.cov]
+description = "Use LLVM source-based code coverage (-C instrument-coverage)."
+category = "project"
+command = "cargo"
+args = ["llvm-cov", "--cobertura", "--output-path", "cobertura.xml"]
+
+[tasks.cov-map]
+description = "Generate coverage report in 'html' format"
+category = "project"
+command = "cargo"
+args = ["llvm-cov", "--html", "--open"]
+
+[tasks.test]
+description = "Test all"
+category = "project"
+dependencies = [
+    "fmt-check",
+    "cov",
+]
+
+[tasks.deps]
+description = "Install dependencies"
+category = "project"
+install_crate = { crate_name = "llvm-cov" }

@@ -5,8 +5,6 @@ use std::path::PathBuf;
 
 use colored::Colorize;
 
-mod cli;
-
 const INOTIFY_DIR: &str = "/proc/sys/fs/inotify";
 
 fn print_separator() {
@@ -41,17 +39,7 @@ fn print_inotify_limits() {
     }
 }
 
-pub fn main() {
-    let args = cli::get_args();
-
-    if let Some(pid) = args.pid {
-        println!("PID: {}", pid);
-    } else if let Some(app_name) = args.app_name {
-        println!("App Name: {}", app_name);
-    } else {
-        println!("No arguments provided.");
-    }
-
+pub fn greet() {
     print_separator();
     print_inotify_limits();
     print_separator();

@@ -25,22 +25,28 @@ watches, instances, and what files are being watched.
 
 # Testing
 
+Install the `cargo-make` task runner:
+
+```bash
+cargo install --no-default-features --force cargo-make
+```
+
 To execute tests:
 
 ```bash
-task test
+cargo make test
 ```
 
 Auto format code:
 
 ```bash
-task fmt
+cargo make fmt
 ```
 
 List helpful targets:
 
 ```bash
-task
+cargo make --list-category-steps project
 ```
 
 ## License
